@@ -1,0 +1,154 @@
+.expert-page {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* .search-bar1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+} */
+
+.search-bar1 input {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+} 
+
+.search-bar button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.university-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.university-item {
+  background-color: #f9f9f9;
+  margin: 10px;
+  padding: 18px;
+  border-radius: 8px;
+  width: 260px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.university-item:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-5px);
+}
+
+.sub-btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 10px 15%;
+}
+
+.sub-btn button {
+  background-color: #28a745;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 28%;
+}
+
+.sub-btn button:hover {
+  background-color: #218838;
+}
+
+.sub-btn button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: red;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+  color: darkred;
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 80%;
+  }
+
+  .university-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .sub-btn {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sub-btn button {
+    width: 100%;
+  }
+}

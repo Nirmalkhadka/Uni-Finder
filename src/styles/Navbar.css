@@ -1,0 +1,93 @@
+.custom-gradient {
+    background: linear-gradient(to right, #4f46e5, #8b5cf6); /* indigo to purple */
+  }
+  
+.navbar-brand fw-bold fs-3 {
+  font-family: "Poppins", sans-serif;
+}
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-link {
+  color: transparent;
+  background-color: transparent;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+/* Global styles */
+
+/* body {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
+/* body.dark {
+  background-color: #121212;
+  color: #fff;
+} */
+
+/* Additional Dark Mode styles */
+/* .navbar.dark {
+  background-color: #333;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+} */
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #c7d0e0;
+}
+
+/* .navbar-dark .btn.btn-primary {
+  background-color: #ff5733;
+}
+
+.navbar-light .btn.btn-primary {
+  background-color: #0066cc;
+} */
+
+.btn-dark-mode {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.user-info {
+  position: relative;
+}
+
+.user-info button {
+  cursor: pointer;
+}
+
+.user-info button:hover {
+  background-color: #f0f0f0;
+}
+
+.user-info .btn.profile-btn {
+  display: none; /* Hide by default */
+}
+
+.user-info:hover .btn.profile-btn {
+  display: block; /* Show on hover */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+

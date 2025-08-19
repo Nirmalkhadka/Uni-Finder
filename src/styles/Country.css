@@ -1,0 +1,76 @@
+.country-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.country-left {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  color: #333;
+  margin-right: 20px;
+}
+
+.country-right {
+  flex: 2;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden; /* Hide anything that moves out of the bounds */
+}
+
+.flag-slider {
+  display: flex;
+  gap: 30px;
+  animation: slideFlags 10s linear infinite;
+}
+
+.flag-card {
+  width: 100px;
+  height: 60px;
+}
+
+.flag-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Sliding effect for flags */
+@keyframes slideFlags {
+  0% {
+    transform: translateX(100%); /* Start from right side */
+  }
+  100% {
+    transform: translateX(-100%); /* End just before the left side */
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .country-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .country-left {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .country-right {
+    width: 90vw; /* Make the right section take most of the width on smaller screens */
+  }
+
+  .flag-card {
+    width: 80px; /* Adjust flag size */
+    height: 50px;
+  }
+}

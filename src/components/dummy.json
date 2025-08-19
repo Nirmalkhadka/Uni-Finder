@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Michael Smith",
+    "photo": "path/to/michael.jpg",
+    "email": "michael@example.com",
+    "areaOfInterest": "Artificial Intelligence"
+  }
+]

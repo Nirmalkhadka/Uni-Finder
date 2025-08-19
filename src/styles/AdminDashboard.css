@@ -1,0 +1,88 @@
+.admin-dashboard-container {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #31416a 0%, #6e8fff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-dashboard-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 36px rgba(50, 65, 120, 0.14);
+    padding: 40px 44px 34px 44px;
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-dashboard-title {
+    font-size: 1.6rem;
+    color: #27336e;
+    font-weight: 700;
+    margin-bottom: 34px;
+    text-align: center;
+    letter-spacing: 0.7px;
+}
+
+.admin-dashboard-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.admin-dashboard-btn {
+    padding: 13px 0;
+    border: none;
+    border-radius: 8px;
+    background: #3949ab;
+    color: #fff;
+    font-size: 1.13rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(36, 48, 94, 0.06);
+}
+
+.admin-dashboard-btn:hover,
+.admin-dashboard-btn:focus {
+    background: #223079;
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 480px) {
+    .admin-dashboard-card {
+        padding: 22px 8px;
+    }
+}
+.admin-logout-btn {
+    position: fixed;
+    top: 32px;
+    right: 48px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.08);
+    transition: background 0.22s, color 0.17s;
+    z-index: 1000; /* ensure it's above card */
+}
+
+.admin-logout-btn:hover,
+.admin-logout-btn:focus {
+    background: #ba2222;
+    color: #fff;
+}
+
+
+.admin-dashboard-card {
+    position: relative; /* Add this to allow the absolute positioning of logout button */
+}

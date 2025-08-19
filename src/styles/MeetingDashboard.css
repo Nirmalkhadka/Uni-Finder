@@ -1,0 +1,174 @@
+.meetings-dashboard {
+    max-width: 900px;
+    margin: 2rem auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 1.2rem;
+    background: #fafbfc;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #22223b;
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+}
+
+.meetings-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(50, 50, 93, .1);
+    padding: 1.4rem 1rem;
+    margin-bottom: 2.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    /* vertical gap between cards */
+    min-height: 320px;
+    /* optional: to visually center if only one card */
+}
+
+/* Center each card in the parent */
+
+.meeting-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center everything horizontally */
+    border: 1.5px solid #e0e5ec;
+    border-radius: 12px;
+    background: #f6f7fb;
+    padding: 2rem 1.5rem 1.8rem 1.5rem;
+    /* More top/bottom padding */
+    margin-bottom: 1.3rem;
+    width: 480px;
+    min-height: 340px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Layout for content and image */
+.meeting-content-row {
+    display: flex;
+    width: 100%;
+    gap: 1.2rem;
+}
+
+/* Center image on its own row at the top */
+.meeting-img-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    /* Add spacing below image */
+}
+
+.meeting-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    background: #eee;
+}
+
+/* The details stack under the image */
+.meeting-details {
+    width: 100%;
+    color: #22223b;
+    margin-bottom: 2.2rem;
+    /* More space before buttons */
+}
+
+.meeting-label {
+    margin: 2px 0;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    /* margin-top: 30px;  */
+}
+
+.meeting-label-key {
+    font-weight: 600;
+    color: #29812e;
+    /* Greenish as reference */
+    margin-right: 0.4em;
+}
+
+/* Buttons row: push to bottom and spread apart */
+.meeting-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 2rem;
+}
+
+/* Fix: make buttons clickable (add below or remove pointer-events: none above) */
+.meeting-actions>button {
+    pointer-events: auto;
+}
+
+.confirm-btn {
+    background: #194185;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.confirm-btn:hover {
+    background: #15386d;
+}
+
+.reject-btn {
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+.reject-btn:disabled,
+.reject-btn[disabled] {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.reject-btn:hover {
+    background: #ba2424;
+}
+
+.reject-btn-2 {
+    /* Existing styles */
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    margin-left: auto;
+    /* This will push it to the right */
+}
+
+.reject-btn-2:hover {
+    background: #ba2424;
+}

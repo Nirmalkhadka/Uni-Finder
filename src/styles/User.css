@@ -1,0 +1,167 @@
+/* --- UserSlider.css --- */
+
+.user-slider-section {
+     background: linear-gradient(to right, #4f46e5, #8b5cf6); 
+  padding: 10px 0;
+  color: white;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.slider {
+  display: flex;
+  gap: 20px; /* Added gap between cards */
+  justify-content:space-between;
+  width: 100%;
+
+  flex-wrap: wrap;
+}
+
+.card {
+  display:flow;
+     background: linear-gradient(to right, #4f46e5, #8b5cf6);
+
+  color: #333;
+  border-radius: 15px;
+  min-width: 280px; /* Ensure a consistent card size */
+  flex: 0 0 auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #0e0d0d;
+}
+
+.card .read-more {
+  margin-top: 10px;
+  background-color: #5A4FCF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  color: #333;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .card {
+    width: 300px; /* Adjust card width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 300px; /* Adjust card width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 290px; /* Further reduce card width for very small screens */
+  }
+}
+
+/* 1. Hover underline on Users title */
+.slider-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.slider-title::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: rgb(187, 43, 43);
+  transition: width 0.4s ease;
+}
+
+.slider-title:hover::after {
+  width: 100%;
+}
+
+/* 2. Card hover effect and stop auto rotation */
+
+.card {
+  background: rgb(198, 197, 207);
+  color: #070707;
+  border-radius: 15px;
+  min-width: 280px;
+  flex: 0 0 auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f0f0f0; /* subtle background color change */
+  transform: translateY(-5px); /* subtle lift */
+}
+
+/* Rest of your styles unchanged */

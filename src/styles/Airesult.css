@@ -1,0 +1,160 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Main container */
+.ai-results {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3e3e3e;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Course container (grid) */
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  gap: 20px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.course-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  max-width: 750px;
+  margin: 0 auto;
+
+  cursor: pointer;
+
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-card h2 {
+  font-size: 1.6rem;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.course-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.course-card p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #555;
+}
+
+.course-card p strong {
+  color: #333;
+}
+
+
+/* University Description Button and Description */
+.description-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.description-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.description-btn:hover {
+  background-color: #0056b3;
+}
+
+.university-description {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* No courses found */
+.no-courses {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff6f61;
+  margin-top: 50px;
+}
+
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .course-container {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    max-width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

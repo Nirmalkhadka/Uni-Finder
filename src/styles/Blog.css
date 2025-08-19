@@ -1,0 +1,129 @@
+/* Blog Section */
+.blog-section {
+  background: linear-gradient(to right, #4f46e5, #8b5cf6);
+  padding: 0 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.blog-title h2 {
+  color: #fff;
+  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.blog-title h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: red;
+  transition: width 0.4s ease;
+}
+
+.blog-title h2:hover::after {
+  width: 100%;
+}
+
+/* Blog Cards */
+.blog-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  width: 30%;
+  background-color: #c5c1c1;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  font-size: 1.2rem;
+  padding: 15px;
+  color: #333;
+}
+
+/* Blog Detail Modal */
+.blog-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.blog-detail-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+.blog-detail-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.blog-detail-content h3 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.blog-detail-content p {
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}

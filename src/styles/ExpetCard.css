@@ -1,0 +1,80 @@
+.expert-card {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 24px;
+  /* display: flex; */
+
+  justify-content: center;
+  /* margin-bottom: 20px; */
+}
+
+.expert-info-box {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 20px; */
+  /* border-radius: 10px; */
+  /* background-color: #f9f9f9; */
+  /* padding: 15px; */
+}
+
+.expert-css{
+    padding: 20PX;
+/* display: flex; */
+  justify-content: center; 
+  /* margin-bottom: 20px */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* padding: 15px; */
+}
+.expert-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+}
+
+.expert-details {
+  margin-left: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.connect-section {
+  margin-top: 20px;
+  display: flex;
+  /* gap: 50PX; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connect-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+.connect-btn:hover {
+  background-color: #45a049;
+}
+
+.date-time-section input {
+  margin:0 0 0 10px;
+
+  padding: 5px;
+  border-radius: 5px;
+}

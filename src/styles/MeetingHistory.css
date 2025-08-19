@@ -1,0 +1,62 @@
+.history-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 1.2rem;
+  background: #fafbfc;
+  min-height: 100vh;
+}
+
+.history-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #22223b;
+  letter-spacing: 1px;
+}
+
+.history-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #194185;
+  margin-top: 2.5rem;
+}
+
+.history-no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e53e3e;
+  margin-top: 2.5rem;
+}
+
+.history-card {
+  border: 1.5px solid #d0d3e2;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(50, 50, 93, .11);
+  padding: 2rem 2rem 1.6rem 2rem;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.history-label-row {
+  margin-bottom: 0.7rem;
+  display: flex;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+}
+
+.history-label {
+  min-width: 160px;
+  color: #194185;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.history-value {
+  color: #333;
+  font-weight: 400;
+}

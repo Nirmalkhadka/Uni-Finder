@@ -1,0 +1,170 @@
+.about-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.about-section1 {
+  background: linear-gradient(to right, #4f46e5, #8b5cf6);
+  padding: 5px;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: -5px;
+  left: 0;
+  background-color: red;
+  transition: width 0.5s ease;
+}
+
+.about-title:hover::after {
+  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative; /* Ensure proper layout stacking */
+}
+
+.photo-slider {
+  flex: 1 1 300px;
+  display: flex;
+  overflow: hidden;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-card {
+  min-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
+}
+
+.company-info {
+  flex: 2 1 500px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.symbol-slider {
+  display: flex;
+  /* position: absolute; */
+  bottom: 10px; /* Adjust distance from the bottom of the company info section */
+  gap: 20px;
+  overflow: hidden;
+  padding: 0;
+  max-width: 100%;
+  animation: slideSymbols 8s linear infinite;
+  width: 100%; /* Ensure symbol slider fits within the content */
+}
+
+.symbol-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.symbol-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.symbol-card p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Sliding Effect for Symbols */
+@keyframes slideSymbols {
+  0% {
+    transform: translateX(8%); /* Start from right side */
+  }
+  100% {
+    transform: translateX(-8%); /* End just before the left side */
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add gap between sections */
+  }
+
+  .photo-slider {
+    max-width: 90vw;
+    flex: none;
+  }
+
+  .photo-card {
+    min-width: 90vw;
+  }
+
+  .company-info {
+    width: 90vw;
+    margin-top: 30px;
+  }
+
+  .symbol-slider {
+    flex-direction: column;
+    gap: 15px;
+    position: relative; /* Reset position on small screens */
+    animation: none; /* Disable animation on smaller screens */
+  }
+
+  .symbol-card {
+    min-width: 80%; /* Adjust width of each symbol card */
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-slider {
+    max-width: 100%; /* Allow photo slider to take full width on smaller screens */
+  }
+
+  .symbol-slider {
+    width: 100%; /* Ensure symbol slider fits in container */
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 20px;
+    animation: none; /* Disable symbol slider animation */
+  }
+
+  .symbol-card {
+    min-width: 70%; /* Adjust symbol card size */
+  }
+}
+.symbol-card p{
+  color: white;
+}
+.div-about{
+  text-align: center;
+}

@@ -1,0 +1,121 @@
+.view-all-students-container {
+    min-height: 100vh;
+    background: #f7f8fa;
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Back Arrow */
+.students-back-arrow {
+    position: fixed;
+    top: 32px;
+    left: 48px;
+    background: none;
+    border: none;
+    color: #27336e;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: color 0.2s;
+}
+
+.students-back-arrow:hover {
+    color: #1e2249;
+}
+
+/* Title */
+.students-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #232654;
+    margin-bottom: 32px;
+    letter-spacing: 0.7px;
+}
+
+/* Student List (Card layout) */
+.students-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+}
+
+.no-students-msg {
+    text-align: center;
+    font-size: 1.13rem;
+    color: #777;
+    margin-top: 60px;
+}
+
+/* Student Card */
+.student-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(60, 72, 120, 0.08);
+    padding: 32px 28px 22px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.18s;
+}
+
+.student-card:hover {
+    box-shadow: 0 8px 30px rgba(60, 72, 120, 0.17);
+}
+
+.student-profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.student-profile-img {
+    width: 108px;
+    height: 108px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e0e4ea;
+    background: #f4f6fc;
+}
+
+.student-details {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.student-details p {
+    margin: 8px 0;
+    font-size: 1.09rem;
+    color: #232654;
+}
+
+.student-details b {
+    color: #24a843;
+    font-weight: 600;
+}
+
+/* Delete Button */
+.delete-student-btn {
+    background: #e53935;
+    color: #fff;
+    padding: 11px 0;
+    border: none;
+    border-radius: 7px;
+    width: 85%;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.delete-student-btn:hover {
+    background: #b71c1c;
+}

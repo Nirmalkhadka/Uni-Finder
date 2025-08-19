@@ -1,0 +1,27 @@
+  #box {
+        background-color:#a5a2e2;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  #box:hover {
+    transform: scale(1.05);
+    background-color:#f0f0f0;
+  }
+  #wrapper{
+        background: linear-gradient(to right, #4f46e5, #8b5cf6); /* indigo to purple */
+
+  }
+  .back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.back-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
