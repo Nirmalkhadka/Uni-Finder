@@ -46,11 +46,10 @@ export const createNewStudent = expressAsyncHandler(async (req, res, next) => {
             let token = jwt.sign(info, secretKey, expiryInfo);
 
             //sending verification email
-            //send verification email
             sendEmail({
                 to: req.body.email,
                 subject: "Email Verification",
-                html: `Click on this link to verify your email: <a href="http://localhost:5173/verify-email?token=${token}">http://localhost:5173/verify-email?token=${token}</a>`
+                html: `Click on this link to verify your email: <a href="https://uni-finder-liart.vercel.app/verify-email?token=${token}">https://uni-finder-liart.vercel.app/verify-email?token=${token}</a>`
             });
 
             res.status(201).json({
@@ -89,22 +88,17 @@ export const loginUser = expressAsyncHandler(async (req, res, next) => {
         let isValidPassword = await bcrypt.compare(req.body.password, result.password);
         if (isValidPassword) {
             let info = {
-                id: result._id,
-                firstName: result.firstName,
-                email: result.email,
-                role: "student",
-                country: result.country
+                id: result._id
             };
             let expiryInfo = {
                 expiresIn: "365d"
             };
             let token = jwt.sign(info, secretKey, expiryInfo);
-
             res.status(200).json({
                 success: true,
-                message: "Login Successful !",
+                message: "Login Success !",
                 token: token,
-                info: info
+                result: result
             });
         }
         else {
@@ -120,31 +114,26 @@ export const viewUserProfile = expressAsyncHandler(async (req, res, next) => {
     let result = await StudentSchema.findById(req.id);
     res.status(200).json({
         success: true,
-        message: "User (Student) Profile Viewed Successfully !",
-        profileDetails: result
+        message: "User Fetched Successfully !",
+        result: result
     });
 });
 
 export const updateUserProfile = expressAsyncHandler(async (req, res, next) => {
-    let data = req.body;
-  
-
-    let result = await StudentSchema.findByIdAndUpdate(req.id, data, { new: true });
-
+    let result = await StudentSchema.findByIdAndUpdate(req.id, req.body, { new: true });
     res.status(201).json({
         success: true,
-        message: "Updated Successfully !",
+        message: "User Updated Successfully !",
         result: result
     });
 });
 
 export const updatePassword = expressAsyncHandler(async (req, res, next) => {
     let oldPassword = req.body.oldPassword;
-    let newPassword = req.body.newPassword;
+    let newPassword = await bcrypt.hash(req.body.newPassword, 10);
     let result = await StudentSchema.findById(req.id);
-    let isValidOldPassword = await bcrypt.compare(oldPassword, result.password);
-    if (isValidOldPassword) {
-        newPassword = await bcrypt.hash(newPassword, 10);
+    let isValidPassword = await bcrypt.compare(oldPassword, result.password);
+    if (isValidPassword) {
         let result = await StudentSchema.findByIdAndUpdate(req.id, { password: newPassword }, { new: true });
         res.status(201).json({
             success: true,
@@ -178,7 +167,7 @@ export const forgetPassword = expressAsyncHandler(async (req, res, next) => {
         sendEmail({
             to: req.body.email,
             subject: "Password Reset Link !",
-            html: `Click on this link to reset your password: <a href="http://localhost:8000/forget-password/reset-password?token=${token}">http://localhost:8000/forget-password/reset-password?token=${token}</a>`
+            html: `Click on this link to reset your password: <a href="https://uni-finder-liart.vercel.app/password/reset-password?token=${token}">https://uni-finder-liart.vercel.app/password/reset-password?token=${token}</a>`
         });
 
         res.status(201).json({
@@ -199,14 +188,11 @@ export const resetPassword = expressAsyncHandler(async (req, res, next) => {
 });
 
 export const handleSingleFileController = expressAsyncHandler(async (req, res, next) => {
-    // console.log("Single File is uploaded in the static folder successfully !");
     let fileInfo = req.file;
-    // console.log(fileInfo);
-    let link = `http://localhost:8000/${req.file.filename}`;
+    let link = `https://uni-finder-liart.vercel.app/${req.file.filename}`;
     res.status(200).json({
         success: true,
         message: "File uploaded successfully !",
         result: link
-    })
-})
-
+    });
+});

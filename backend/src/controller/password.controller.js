@@ -6,7 +6,6 @@ import { sendEmail } from "../utils/sendingEmail.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-
 export const forgotPassword = expressAsyncHandler(async (req, res, next) => {
     const registeredEmail = req.body.registeredEmail;
 
@@ -32,7 +31,7 @@ export const forgotPassword = expressAsyncHandler(async (req, res, next) => {
             sendEmail({
                 to: registeredEmail,
                 subject: "Password Reset Link !",
-                html: `Click on this link to reset your password: <a href="http://localhost:5173/password/reset-password?token=${token}">http://localhost:5173/password/reset-password?token=${token}</a>`
+                html: `Click on this link to reset your password: <a href="https://uni-finder-liart.vercel.app/password/reset-password?token=${token}">https://uni-finder-liart.vercel.app/password/reset-password?token=${token}</a>`
             });
 
             res.status(201).json({
@@ -54,7 +53,7 @@ export const forgotPassword = expressAsyncHandler(async (req, res, next) => {
         sendEmail({
             to: registeredEmail,
             subject: "Password Reset Link !",
-            html: `Click on this link to reset your password: <a href="http://localhost:5173/password/reset-password?token=${token}">http://localhost:5173/password/reset-password?token=${token}</a>`
+            html: `Click on this link to reset your password: <a href="https://uni-finder-liart.vercel.app/password/reset-password?token=${token}">https://uni-finder-liart.vercel.app/password/reset-password?token=${token}</a>`
         });
 
         res.status(201).json({
@@ -62,7 +61,6 @@ export const forgotPassword = expressAsyncHandler(async (req, res, next) => {
             message: "A password reset link has been sent to your email.",
             token: token
         });
-
     }
 });
 
@@ -77,7 +75,7 @@ export const resetPassword2 = expressAsyncHandler(async (req, res, next) => {
         if (result2 === null) {
             res.status(200).json({
                 success: false,
-                message: "Password coould not be reset !"
+                message: "Password could not be reset !"
             });
         }
         else {
@@ -93,7 +91,7 @@ export const resetPassword2 = expressAsyncHandler(async (req, res, next) => {
             message: "Password reset done successfully !"
         });
     }
-})
+});
 
 export const validatePassword = expressAsyncHandler(async (req, res, next) => {
     let newPassword = req.body.newPassword;
@@ -106,9 +104,9 @@ export const validatePassword = expressAsyncHandler(async (req, res, next) => {
         });
     }
     else {
-        res.status(400).json({
+        return res.status(400).json({
             success: false,
             message: "Password must contain 8-12 characters, at least 1 uppercase letter, at least 1 lowercase letter, at least 1 number and at least 1 special character !!"
         });
     }
-})
+});
