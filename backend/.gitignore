@@ -1,0 +1,21 @@
+# Backend
+backend/node_modules/
+backend/.env
+backend/*.log
+
+# Python/Flask (if applicable for AI models)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.db
+.venv/
+venv/
+ENV/
+env/
+
+# General
+.DS_Store
+.idea/
+.vscode/
