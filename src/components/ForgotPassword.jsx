@@ -12,42 +12,30 @@ const ForgotPassword = () => {
 
         if (!email) {
             toast.error("Please enter your registered email.");
+            return;
         }
-        else {
-            setLoading(true);
-            try {
-                // Adjust the URL to match your backend endpoint for forgot password
-                let registeredEmail = email;
-                console.log(registeredEmail);
 
-                let result = await axios({
-                    url: "http://localhost:8000/password/forgot-password",
-                    method: "POST",
-                    data: { registeredEmail: registeredEmail }
-                });
-                console.log(result);
-                let token = result.data.token; 
+        setLoading(true);
+        try {
+            let registeredEmail = email;
+            let result = await axios({
+                url: `${process.env.REACT_APP_BACKEND_URL}/password/forgot-password`,
+                method: "POST",
+                data: { registeredEmail: registeredEmail }
+            });
 
-                
-
-                // toast.success("Reset link sent to your registered email !"); 
-
-                // setEmail('');
-                if (result.data.success) {
-                    let token = result.data.token;
-                    localStorage.setItem("token", token); 
-                    toast.success("Reset link sent to your registered email !");
-                    setEmail('');
-                } else {
-                    toast.error(result.data.message || "Email not registered!");
-                }
-
-                // navigate("/password/reset-password");
-            } catch (error) {
-                toast.error(error?.response?.data?.message || "Email Not Registered");
+            if (result.data.success) {
+                let token = result.data.token;
+                localStorage.setItem("token", token);
+                toast.success("Reset link sent to your registered email!");
+                setEmail('');
+            } else {
+                toast.error(result.data.message || "Email not registered!");
             }
-            setLoading(false);
+        } catch (error) {
+            toast.error(error?.response?.data?.message || "Email Not Registered");
         }
+        setLoading(false);
     };
 
     return (

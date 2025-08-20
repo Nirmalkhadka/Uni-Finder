@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "../styles/ResetPassword.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
@@ -9,12 +10,12 @@ const ResetPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showNew, setShowNew] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    let token = localStorage.getItem("token"); 
-
-    // If you are using a reset token (from email link), get it here. 
-    // For now, just a placeholder.
-    // const token = ... 
+    // Extract token from URL query parameter
+    const queryParams = new URLSearchParams(location.search);
+    const token = queryParams.get('token') || localStorage.getItem("token");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,32 +25,29 @@ const ResetPassword = () => {
             return;
         }
 
-        let data = {
-            newPassword: newPassword
+        if (!token) {
+            toast.error("Invalid or missing token.");
+            return;
         }
 
         try {
             let result = await axios({
-                url: "http://localhost:8000/password/reset-password", 
+                url: `${process.env.REACT_APP_BACKEND_URL}/password/reset-password`,
                 method: "PATCH",
-                headers: { Authorization: `Bearer ${token}` }, // If needed
-                data: data
+                headers: { Authorization: `Bearer ${token}` },
+                data: { newPassword }
             });
+
             toast.success("Password Reset Successfully!");
             setNewPassword("");
             setConfirmPassword("");
-            // Optionally: Redirect to login page
-
-            localStorage.removeItem("token"); 
-
+            localStorage.removeItem("token");
+            navigate("/login"); // Redirect to login page
         } catch (error) {
             toast.error(error?.response?.data?.message || "Password reset failed.");
         }
     };
 
-    // const handleGoTO = ()=>{
-    //     navigate("/"); 
-    // }
     return (
         <div className="reset-password-card">
             <ToastContainer />
@@ -100,7 +98,6 @@ const ResetPassword = () => {
                 </div>
 
                 <button className="reset-btn" type="submit">Reset</button>
-                {/* <button className="reset-btn" onClick={handleGoTO}>Go to HomePage</button> */}
             </form>
         </div>
     );
