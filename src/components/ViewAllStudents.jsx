@@ -9,7 +9,6 @@ const ViewAllStudents = () => {
     const [students, setStudents] = useState([]);
     const navigate = useNavigate();
 
-    // Fetch students data from backend API
     useEffect(() => {
         fetchStudents();
     }, []);
@@ -17,37 +16,31 @@ const ViewAllStudents = () => {
     const fetchStudents = async () => {
         try {
             let result = await axios({
-                url: "http://localhost:8000/admin/viewAllStudents",
+                url: `${process.env.REACT_APP_BACKEND_URL}/admin/viewAllStudents`,
                 method: "GET"
             });
-
-            // console.log(result); 
-
             setStudents(result.data.result || []);
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error?.response?.data?.message || "Failed to fetch students.");
         }
     };
-
-    let studentID;
 
     const handleDelete = async (id) => {
         try {
             let result = await axios({
-                url: `http://localhost:8000/admin/deleteSpecificStudent/${id}`,
+                url: `${process.env.REACT_APP_BACKEND_URL}/admin/deleteSpecificStudent/${id}`,
                 method: "DELETE"
             });
-            toast.success("Deleted Successfully !"); 
-            fetchStudents(); 
+            toast.success("Deleted Successfully!");
+            fetchStudents();
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error?.response?.data?.message || "Failed to delete student.");
         }
     };
 
     return (
         <div className="view-all-students-container">
             <ToastContainer />
-            {/* Top left back arrow */}
             <button
                 className="students-back-arrow"
                 onClick={() => navigate("/unifinder/login/admin/admin-dashboard")}

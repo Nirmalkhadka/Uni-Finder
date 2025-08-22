@@ -9,7 +9,6 @@ const ViewAllConsultants = () => {
     const [consultants, setConsultants] = useState([]);
     const navigate = useNavigate();
 
-    // Fetch consultants data from backend API
     useEffect(() => {
         fetchConsultants();
     }, []);
@@ -17,25 +16,25 @@ const ViewAllConsultants = () => {
     const fetchConsultants = async () => {
         try {
             let result = await axios({
-                url: "http://localhost:8000/admin/viewAllConsultants",
+                url: `${process.env.REACT_APP_BACKEND_URL}/admin/viewAllConsultants`,
                 method: "GET"
             });
             setConsultants(result.data.result || []);
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error?.response?.data?.message || "Failed to fetch consultants.");
         }
     };
 
     const handleDelete = async (id) => {
         try {
             let result = await axios({
-                url: `http://localhost:8000/admin/deleteSpecificConsultant/${id}`,
+                url: `${process.env.REACT_APP_BACKEND_URL}/admin/deleteSpecificConsultant/${id}`,
                 method: "DELETE"
             });
             toast.success("Deleted Successfully!");
             fetchConsultants();
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error?.response?.data?.message || "Failed to delete consultant.");
         }
     };
 

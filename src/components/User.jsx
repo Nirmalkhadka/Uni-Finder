@@ -6,10 +6,10 @@ import user3 from '../assets/images/OIP.jpg';
 import user4 from '../assets/images/th.jpg';
 
 const users = [
-  { name: 'Rani Shrestha', image: user1, bio: 'UNIFINDER made my university search process so much easier! I could quickly filter universities based on my academic qualifications and budget. The virtual meetings with current students were a great addition – it really helped me understand what to expect.' },
-  { name: 'Anjali KC', image: user2, bio: 'As a Nepalese student trying to study abroad, I was overwhelmed by the number of options. UNIFINDER helped me narrow down my choices based on eligibility and fees. The personalized recommendations were spot-on, and the community connection feature was really helpful!' },
-  { name: 'Suman Rai', image: user3, bio: '"I love how easy it is to navigate through the UNIFINDER platform. The detailed information about tuition, accommodation, and country requirements saved me hours of research. I highly recommend it to anyone planning to study abroad."' },
-  { name: 'Pooja Thapa', image: user4, bio: 'UNIFINDER is a game-changer! It gave me a clear list of universities that fit my academic and financial profile. I also got to connect with fellow Nepalese students already studying abroad, which made the whole decision-making process much more comfortable.' }
+  { name: 'Rani Shrestha', image: user1, bio: 'UNIFINDER made my university search process so much easier.' },
+  { name: 'Anjali KC', image: user2, bio: 'As a Nepalese student trying to study abroad, I was overwhelmed by the number of options.' },
+  { name: 'Suman Rai', image: user3, bio: '"I love how easy it is to navigate through the UNIFINDER platform.' },
+  { name: 'Pooja Thapa', image: user4, bio: 'UNIFINDER is a game-changer.' }
 
 ];
 
