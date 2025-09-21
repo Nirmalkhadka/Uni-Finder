@@ -1,12 +1,36 @@
-# React + Vite
+# UNIFINDER Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+User-facing interface for UNIFINDER app, built with React.js for responsive, component-based UI. Handles user auth, profiles, university recommendations, peer consultations via Zoom, contact forms, and dashboards.
 
-Currently, two official plugins are available:
+## Features
+- Responsive landing page with sections for services, testimonials, contact.
+- User registration/login with email verification.
+- Profile management with file uploads (React Dropzone).
+- AI recommendation form and results display.
+- Meeting scheduling and notifications (React Toastify).
+- Admin dashboard for user/meeting management.
+- Contact form integration with EmailJS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+- React.js: Component-based UI.
+- React DOM: DOM rendering.
+- React Router DOM: Dynamic routing.
+- Axios: API requests.
+- Bootstrap 5: Responsive design.
+- SCSS: Modular styling.
+- React Toastify: Notifications.
+- React Dropzone: File uploads.
+- EmailJS: Direct email sending.
 
-## Expanding the ESLint configuration
+## Installation
+1. Clone repository.
+2. Navigate to frontend directory: `cd frontend`.
+3. Install dependencies: `npm install`.
+4. Set environment variables (e.g., API base URL, EmailJS keys).
+5. Run: `npm start`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+- Access at http://localhost:3000.
+- Interact via forms for recommendations and consultations.
+- Connects to backend APIs for data.
